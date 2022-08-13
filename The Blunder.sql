@@ -1,7 +1,8 @@
-SELECT name
-FROM city
-WHERE countrycode = 'USA' and population > 120000;
+SELECT CEIL(AVG(e.salary) - AVG(REPLACE(e.salary,0,'')))
+FROM employees e;
 
-
-#Query the NAME field for all American cities in the CITY table #with populations larger than 120000. The CountryCode for #America is USA.
-#The CITY table is described as follows: 
+#Samantha was tasked with calculating the average monthly salaries for all employees 
+#in the EMPLOYEES table, but did not realize her keyboard's  key was broken until after completing the calculation. 
+#She wants your help finding the difference between her miscalculation (using salaries with any zeros removed), and the actual average salary.
+#Write a query calculating the amount of error (i.e.: actual average monthly salaries - miscalculated average monthly salaries), 
+#and round it up to the next integer.
