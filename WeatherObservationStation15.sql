@@ -1,7 +1,5 @@
-SELECT name
-FROM city
-WHERE countrycode = 'USA' and population > 120000;
+SELECT ROUND(st.LONG_W,4)
+FROM station st
+WHERE st.LAT_N = (SELECT MAX(s.LAT_N) FROM station s WHERE s.LAT_N < 137.2345);
 
-
-#Query the NAME field for all American cities in the CITY table #with populations larger than 120000. The CountryCode for #America is USA.
-#The CITY table is described as follows: 
+#Query the Western Longitude (LONG_W) for the largest Northern Latitude (LAT_N) in STATION that is less than . Round your answer to  decimal places.
