@@ -1,7 +1,7 @@
-SELECT name
-FROM city
-WHERE countrycode = 'USA' and population > 120000;
+SELECT DISTINCT st.city
+FROM station st
+WHERE st.city LIKE '%a' OR st.city LIKE '%e' OR st.city LIKE '%i' OR
+st.city LIKE '%o' OR st.city LIKE '%u';
 
 
-#Query the NAME field for all American cities in the CITY table #with populations larger than 120000. The CountryCode for #America is USA.
-#The CITY table is described as follows: 
+#Query the list of CITY names ending with vowels (a, e, i, o, u) from STATION. Your result cannot contain duplicates.
