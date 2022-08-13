@@ -1,7 +1,8 @@
-SELECT name
-FROM city
-WHERE countrycode = 'USA' and population > 120000;
+SELECT SUM(ct.population)
+FROM city ct
+JOIN country cnt 
+ON cnt.Code = ct.CountryCode
+WHERE cnt.Continent = 'Asia';
 
-
-#Query the NAME field for all American cities in the CITY table #with populations larger than 120000. The CountryCode for #America is USA.
-#The CITY table is described as follows: 
+#Given the CITY and COUNTRY tables, query the sum of the populations of all cities where the CONTINENT is 'Asia'.
+#Note: CITY.CountryCode and COUNTRY.Code are matching key columns.
