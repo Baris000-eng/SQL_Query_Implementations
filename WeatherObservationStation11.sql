@@ -1,7 +1,3 @@
-SELECT name
-FROM city
-WHERE countrycode = 'USA' and population > 120000;
+SELECT DISTINCT st.city FROM STATION st WHERE RIGHT(st.city, 1) NOT IN ('A','E','I','O','U') OR LEFT(st.city,1) NOT IN ('A','E','I','O','U');
 
-
-#Query the NAME field for all American cities in the CITY table #with populations larger than 120000. The CountryCode for #America is USA.
-#The CITY table is described as follows: 
+#Query the list of CITY names from STATION that either do not start with vowels or do not end with vowels. Your result cannot contain duplicates.
