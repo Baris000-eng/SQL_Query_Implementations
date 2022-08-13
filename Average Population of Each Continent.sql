@@ -1,7 +1,10 @@
-SELECT name
-FROM city
-WHERE countrycode = 'USA' and population > 120000;
+SELECT cnt.Continent,FLOOR(AVG(ct.Population))
+FROM country cnt
+JOIN city ct
+WHERE cnt.Code = ct.CountryCode
+GROUP BY cnt.Continent;
 
 
-#Query the NAME field for all American cities in the CITY table #with populations larger than 120000. The CountryCode for #America is USA.
-#The CITY table is described as follows: 
+#Given the CITY and COUNTRY tables, query the names of all the continents (COUNTRY.Continent) 
+# and their respective average city populations (CITY.Population) rounded down to the nearest integer.
+#Note: CITY.CountryCode and COUNTRY.Code are matching key columns.
