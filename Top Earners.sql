@@ -1,7 +1,11 @@
-SELECT name
-FROM city
-WHERE countrycode = 'USA' and population > 120000;
+SELECT e.salary*e.months,COUNT(*)
+FROM EMPLOYEE e
+GROUP BY e.salary*e.months
+ORDER BY e.salary*e.months DESC
+LIMIT 1;
 
-
-#Query the NAME field for all American cities in the CITY table #with populations larger than 120000. The CountryCode for #America is USA.
-#The CITY table is described as follows: 
+#We define an employee's total earnings to be their monthly worked, and 
+#the maximum total earnings to be the maximum total earnings for any employee 
+#in the Employee table. Write a query to find the maximum total earnings for all 
+#employees as well as the total number of employees who have maximum total earnings. Then print these 
+#values as  space-separated integers.
