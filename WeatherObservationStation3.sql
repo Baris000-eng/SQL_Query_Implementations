@@ -1,7 +1,8 @@
-SELECT name
-FROM city
-WHERE countrycode = 'USA' and population > 120000;
+
+SELECT DISTINCT st.city
+FROM station st
+WHERE MOD(st.id,2)=0;
 
 
-#Query the NAME field for all American cities in the CITY table #with populations larger than 120000. The CountryCode for #America is USA.
-#The CITY table is described as follows: 
+#Query a list of CITY names from STATION for cities that have an even ID number. Print the results in any order, but exclude duplicates from the answer. 
+#The STATION table is described as follows:
